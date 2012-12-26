@@ -37,3 +37,12 @@ Test id:
 go to http://cos/test/github/github.php (or the path you have choosen). 
 
 This will example log yourself in and show your basic profile info. 
+
+### More info
+
+For full listing of all api calls check: 
+
+http://developer.github.com/
+
+I have not tested all calls, but all I have testet works - even PATCH, PUT, and
+DELETE.
