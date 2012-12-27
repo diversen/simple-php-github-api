@@ -24,15 +24,16 @@ class githubApi {
     public $returnCode = null;
     /**
      * oauth stars with getting a login url from configuration
-     * @param array $config e.g. $access_config = array (
+     * @param array $config e.g. <code>$access_config = array (
      *                              'redirect_uri' => 'http://cos/test/callback.php',
      *                              'client_id' => 'app id',
      *                              'state' =>  md5(uniqid()),
      *                              'scope' => 'user'
-     *                           );
-     * If you don't set use you can only get users basic profile info,
-     * but you can use it as atuhentication anyway
-     * @return boolean $res true on success and false on failure
+     *                           );</code>
+     * If you don't set scope you can only get users basic profile info,
+     * but you can use it as e.g login methdod anyway
+     * @return string $url a github url where you can obtain users accept of 
+     *                     using his account according to scope
      */
     public function getAccessUrl ($config) {
 
@@ -47,11 +48,11 @@ class githubApi {
     /**
      * sets the access token in a session variable, which
      * then can be used when calling the api
-     * @param array $post e.g. $post = array (
-                                    'redirect_uri' => 'http://cos/test/callback.php',
-                                    'client_id' => 'app_id',
-                                    'client_secret' => 'app_secret',
-                               );
+     * @param array $post e.g. <code>$post = array (
+     *                               'redirect_uri' => 'http://cos/test/callback.php',
+     *                               'client_id' => 'app_id',
+     *                               'client_secret' => 'app_secret',
+     *                          );</code>
      * @return boolean $res true on success and false on failure
      */
     public function setAccessToken ($post) {
@@ -83,9 +84,13 @@ class githubApi {
     }
 
     /**
-     * when we have set the access token we can make calls to the api
-     * @param string $command e.g. /user
-     * @return array $res array with the reult of the call
+     * Commands to call se
+     * http://developer.github.com/v3/
+     * For a full listing
+     * @param string $command e.g "/users"
+     * @param string $request e.g "POST", if empty it is a GET
+     * @param string $post vaiables to POST or PATCH
+     * @return array $ary response from github server
      */
     public function apiCall ($command, $request = null, $post = null) {
         if (!isset($_SESSION['access_token']) || empty($_SESSION['access_token'])) {
@@ -107,9 +112,7 @@ class githubApi {
             $json = json_encode($post);
             $c->setPost($json);
         }
-        
-        
-        
+           
         $c->createCurl();
         $resp = $c->getWebPage();
         $this->returnCode = $c->getHttpStatus();
