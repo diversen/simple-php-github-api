@@ -10,7 +10,11 @@ include_once "config.php";
 $api = new githubApi();
 
 // simple call
-$res = $api->apiCall('/user');
+
+//$command = '/legacy/repos/search/coscms';
+$command = "/users";
+
+$res = $api->apiCall($command);
 if (!$res) {
     print_r( $api->errors); die;
 }

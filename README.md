@@ -32,11 +32,11 @@ Edit the 3. constants according to your setup.
     define('GITHUB_SECRET', 'github_secret');
     define('GITHUB_CALLBACK_URL', 'http://cos/test/github/callback.php');
 
-Test id: 
+Test it: 
 
-go to http://cos/test/github/github.php (or the path you have choosen). 
+go to http://cos/test/github/github.php (or your web path). 
 
-This will example log yourself in and show your basic profile info. 
+This example will log a user in and show his basic profile info. 
 
 ### More info
 
@@ -44,5 +44,5 @@ For full listing of all api calls check:
 
 http://developer.github.com/
 
-I have not tested all calls, but all I have testet works - even PATCH, PUT, and
-DELETE.
+I have not tested all calls - but you shuold be able to use all. E.g. POST,
+or PATCH.
