@@ -3,11 +3,11 @@
 session_start();
 
 include_once "mycurl.php";
-include_once "github_api.php";
+include_once "githubapi.php";
 include_once "config.php";
 
 // we have a access token and we can now call the api: 
-$api = new githubApi();
+$api = new githubapi();
 
 // simple call
 

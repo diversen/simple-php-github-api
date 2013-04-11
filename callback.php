@@ -23,7 +23,7 @@ $post = array (
     'client_secret' => GITHUB_SECRET,
 );
 
-$api = new githubApi();
+$api = new githubapi();
 $res = $api->setAccessToken($post);
 
 if ($res) {

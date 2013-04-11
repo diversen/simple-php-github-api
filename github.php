@@ -4,7 +4,7 @@ session_start();
 
 include_once "config.php";
 include_once "mycurl.php";
-include_once "github_api.php";
+include_once "githubapi.php";
 
 /**
  * this is the config used for creating a url to github.com
@@ -26,7 +26,7 @@ $access_config = array (
     'scope' => 'user'
 );
 
-$api = new githubApi();
+$api = new githubapi();
 
 $url = $api->getAccessUrl($access_config);
 echo "<a href=\"$url\">Github Login</a>";
