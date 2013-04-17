@@ -16,7 +16,7 @@ Callback URL:
 
     http://cos/test/github/example/callback.php
 
-### Usage
+### Example Usage
 
 Clone the source or download it into a web directory
 
@@ -36,7 +36,7 @@ Test it:
 
 go to http://cos/test/github/github.php (or your web path). 
 
-This example will show his basic profile info.
+This example will show the user his basic profile info.
 This could be used to make e.g. a login system. 
 
 ### More info
@@ -48,7 +48,11 @@ http://developer.github.com/
 I have not tested all calls - but you should be able to use all. E.g. POST,
 or PATCH.
 
-### Composer
+### Composer specifics
+
+You can include the lib into a vendor library
+
+edit you `composer.json` file
 
 add the following to repos :
 
@@ -59,5 +63,5 @@ add the following to repos :
 
 add the following to the require section: 
 
-                    "diversen/simple-php-github-api": "1.0.1",
+                    "diversen/simple-php-github-api": "1.0.2",
 
