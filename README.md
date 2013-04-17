@@ -10,11 +10,11 @@ For my example I used:
 
 URL:
     
-    http://cos/test/github/github.php
+    http://cos/test/github/example/github.php
 
 Callback URL:
 
-    http://cos/test/github/callback.php
+    http://cos/test/github/example/callback.php
 
 ### Usage
 
@@ -36,13 +36,28 @@ Test it:
 
 go to http://cos/test/github/github.php (or your web path). 
 
-This example will log a user in and show his basic profile info. 
+This example will show his basic profile info.
+This could be used to make e.g. a login system. 
 
 ### More info
 
-For full listing of all api calls check: 
+For full listing of all API calls check: 
 
 http://developer.github.com/
 
-I have not tested all calls - but you shuold be able to use all. E.g. POST,
+I have not tested all calls - but you should be able to use all. E.g. POST,
 or PATCH.
+
+### Composer
+
+add the following to repos :
+
+                    {
+                        "type": "vcs",
+                        "url": "https://github.com/diversen/simple-php-github-api"
+                    }
+
+add the following to the require section: 
+
+                    "diversen/simple-php-github-api": "1.0.1",
+
