@@ -56,4 +56,4 @@ edit you `composer.json` file
 
 add the following to the require section: 
 
-    "diversen/simple-php-github-api": "1.0.2"
+    "diversen/simple-php-github-api": "1.0.*"
