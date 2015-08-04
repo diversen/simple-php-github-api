@@ -54,16 +54,6 @@ You can include the lib into a vendor library
 
 edit you `composer.json` file
 
-add the following to repos (after I added this to packagist I believe you
-don't need it anymore):
-
-    {
-        "type": "vcs",
-        "url": "https://github.com/diversen/simple-php-github-api"
-    }
-
-
-
 add the following to the require section: 
 
     "diversen/simple-php-github-api": "1.0.2"
