@@ -1,0 +1,10 @@
+{
+    "name": "diversen/simple-php-classes",
+    "description": "A collection of simple classes",
+    "autoload": {
+        "psr-4": {
+            "diversen\\": "src/"
+        }
+    }
+}
+
