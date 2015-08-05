@@ -34,7 +34,7 @@ $access_config = array (
     'redirect_uri' => GITHUB_CALLBACK_URL,
     'client_id' => GITHUB_ID,
     'state' =>  md5(uniqid()),
-    'scope' => 'user' 
+    'scope' => GITHUB_SCOPE
 );
 
 $api = new githubapi();

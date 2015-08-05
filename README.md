@@ -125,7 +125,11 @@ Run test-server with example:
 
 For full listing of all API calls check: 
 
-http://developer.github.com/
+[https://developer.github.com/v3/](https://developer.github.com/v3/)
+
+Scope: 
+
+[https://developer.github.com/v3/oauth/#scopes](https://developer.github.com/v3/oauth/#scopes)
 
 I have not tested many calls - but you should be able to use all. E.g. POST,
 or PATCH, DELETE.
