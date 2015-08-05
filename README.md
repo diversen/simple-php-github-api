@@ -86,17 +86,15 @@ You will se something like this:
 
 Create your app. 
 
-## Clone the `simple-php-github-api` source
+## Instal `simple-php-github-api`
 
-    git clone https://github.com/diversen/simple-php-github-api
+    php composer.phar require diversen/simple-php-github-api:~1.0
 
-    cd simple-php-github-api
+Enter base_dir:
 
-    composer update
+    cd vendor/diversen/simple-php-github-api
 
 ## Configuration
-
-    cd simple-php-github-api
 
     cp example/config.php-dist example/config.php
 
