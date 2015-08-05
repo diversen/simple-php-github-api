@@ -79,7 +79,7 @@ Log into [github.com](github.com)
 
 Register a new application at [https://github.com/settings/developers](https://github.com/settings/developers)
 
-You will se something like this: 
+You will see something like this: 
 
 ![](https://raw.githubusercontent.com/diversen/simple-php-github-api/master/github-api.png "My settings")
 
