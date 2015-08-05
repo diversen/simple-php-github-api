@@ -17,8 +17,9 @@
 	"require": {
 		"php": ">=5.3.0",
 		"diversen/simple-php-classes": "dev-master"
-	},
-    "autoload": {
-        "psr-0": { "diversen": "" }
-    }
+	}
+
+	"psr-4": {
+            "diversen\\": "src/"
+        }
 }
