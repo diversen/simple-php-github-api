@@ -3,7 +3,7 @@
 // Step tree: Call the API
 
 // Autoload
-include_once "../vendor/autoload.php";
+include_once "../../../autoload.php";
 
 // Very small boot file. Starts session. Defines constants. 
 include_once "boot.php";

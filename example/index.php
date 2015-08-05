@@ -3,7 +3,8 @@
 // Step one: Creating a authorisation URL for github
 
 // autoload
-include_once "../vendor/autoload.php";
+
+include_once "../../../autoload.php";
 
 // very small boot file. Starts session. Defines constants. 
 include_once "boot.php";

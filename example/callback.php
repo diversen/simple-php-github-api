@@ -3,7 +3,7 @@
 // Step two: check if user has autorized our app
 
 // autoload
-include_once "../vendor/autoload.php";
+include_once "../../../autoload.php";
 
 // very small boot file. Starts session. Defines constants. 
 include_once "boot.php";
