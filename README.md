@@ -88,6 +88,10 @@ Create your app.
 ## Instal `simple-php-github-api`
 
     php composer.phar require diversen/simple-php-github-api:~1.0
+    
+Or if you have placed composer.phar in `your path` as composer
+
+php composer.phar require diversen/simple-php-github-api:~1.0
 
 Enter base_dir:
 
