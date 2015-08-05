@@ -91,7 +91,7 @@ Create your app.
     
 Or if you have placed composer.phar in `your path` as composer
 
-php composer.phar require diversen/simple-php-github-api:~1.0
+    composer require diversen/simple-php-github-api:~1.0
 
 Enter base_dir:
 
