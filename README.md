@@ -1,7 +1,10 @@
 # About
 
 Very simple github API for PHP using OAuth. 37 LOC for the API class. And a
-curl helper class with 84 LOC. 
+curl helper class with 84 LOC.
+
+Source for githubapi.php: [https://github.com/diversen/simple-php-github-api/blob/master/src/githubapi.php](https://github.com/diversen/simple-php-github-api/blob/master/src/githubapi.php)
+
 
 # Brief explantion.
 
