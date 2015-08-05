@@ -3,7 +3,7 @@
 // Step tree: Call the API
 
 // Autoload
-include_once "../../../autoload.php";
+include_once "../vendor/autoload.php";
 
 // Very small boot file. Starts session. Defines constants. 
 include_once "boot.php";
@@ -17,7 +17,7 @@ $api = new githubapi();
 // Simple call - get current users credentials
 // This can also be done without scope
 $command = "/user";
-$res = $api->apiCall($command);
+$res = $api->apiCall($command, 'GET', null);
 if (!$res) {
     print_r($api->errors); die;
 }
