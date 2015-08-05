@@ -3,7 +3,7 @@
     "type": "library",
     "description": "simple php github api",
     "homepage": "http://github.com/diversen/simple-php-github-api",
-    "keywords": ["github"],
+    "keywords": ["github", "API"],
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -20,6 +20,11 @@
     "autoload": {
         "psr-4": {
             "diversen\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     }
 }
