@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aa32e4e4bffa447c3bcdc70123ce0f95",
+    "hash": "f11a516360d3760a2f4cb8eb4a8c1a89",
     "packages": [
         {
             "name": "diversen/simple-php-classes",
-            "version": "1.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/diversen/simple-php-classes.git",
-                "reference": "a71c08f5df8b75c51ed9d55453d0144eaf0fa51a"
+                "reference": "b05c00c4b336dda9ab4edff1cbf80e99f5523f87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/diversen/simple-php-classes/zipball/a71c08f5df8b75c51ed9d55453d0144eaf0fa51a",
-                "reference": "a71c08f5df8b75c51ed9d55453d0144eaf0fa51a",
+                "url": "https://api.github.com/repos/diversen/simple-php-classes/zipball/b05c00c4b336dda9ab4edff1cbf80e99f5523f87",
+                "reference": "b05c00c4b336dda9ab4edff1cbf80e99f5523f87",
                 "shasum": ""
             },
             "type": "library",
@@ -28,13 +28,15 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "A collection of simple classes",
-            "time": "2015-08-01 20:25:24"
+            "time": "2015-08-04 23:12:59"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "diversen/simple-php-classes": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

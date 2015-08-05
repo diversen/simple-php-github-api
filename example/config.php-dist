@@ -1,7 +1,5 @@
 <?php
 
-define('GITHUB_ID', 'github_id');
-define('GITHUB_SECRET', 'github_secret');
-define('GITHUB_CALLBACK_URL', 'http://cos/test/github/callback.php');
-
-include_once "autoload.php";
+define('GITHUB_ID', 'f74854a6f0e5a473dfe1');
+define('GITHUB_SECRET', 'c0946d82b5e631600ab1bea16f61b46c67d220e2');
+define('GITHUB_CALLBACK_URL', 'http://localhost:8080/callback.php');

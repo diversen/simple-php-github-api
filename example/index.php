@@ -1,38 +1,42 @@
 <?php
 
+// Step one: Creating a authorisation URL for github
 
-include_once "../../vendor/autoload.php";
+// autoload
+include_once "../vendor/autoload.php";
 
-use diversen\githubapi as githubApi;
-use diversen\config\ary;
-session_start();
+// very small boot file. Starts session. Defines constants. 
+include_once "boot.php";
 
-
+// use the githubapi
+use diversen\githubapi;
 
 /**
- * this is the config used for creating a url to github.com
- * then we go to the github url and asks for the user to accept
- * the scope of our application. 
+ * This is the config we use when creating a url to github.com
  * 
- * You can edit scope. 
+ * Click the link, and we browser to the github site, 
+ * and asks for the user to accept the scope of our application. 
  * 
- * This is set to empty, but you could e.g. set it to 'user'
- * where ask for permissions to write to repos. 
  * 
- * We press the url and we move to the github site where
+ * Scope is set to 'user', but you could e.g. set it empty for the
+ * lowest privileges 
+ * 
+ * We press the url, and we move to the github site where
  * the user will be able to accept that this app uses some
- * priviligies. If the user accepts We return to callback.php 
+ * priviligies. If the user accepts, we return to callback.php 
  * 
- * See: callback.php
+ * Next /callback.php
  */
+
+
 $access_config = array (
     'redirect_uri' => GITHUB_CALLBACK_URL,
     'client_id' => GITHUB_ID,
     'state' =>  md5(uniqid()),
-    /*'scope' => 'user' */
+    'scope' => 'user' 
 );
 
-$api = new githubApi();
+$api = new githubapi();
 
 $url = $api->getAccessUrl($access_config);
 echo "<a href=\"$url\">Github Login</a>";

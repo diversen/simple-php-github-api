@@ -26,8 +26,8 @@ class githubapi {
     
     public $returnCode = null;
     /**
-     * oauth stars with getting a login url from configuration
-     * @param array $config e.g. <code>$access_config = array (
+     * we need a github OAuth login url from configuration
+     * @param array $config e.g. <code>config = array (
      *                              'redirect_uri' => 'http://cos/test/callback.php',
      *                              'client_id' => 'app id',
      *                              'state' =>  md5(uniqid()),
@@ -91,8 +91,8 @@ class githubapi {
      * http://developer.github.com/v3/
      * For a full listing
      * @param string $command e.g "/users"
-     * @param string $request e.g "POST", if empty it is a GET
-     * @param string $post vaiables to POST or PATCH
+     * @param string $request e.g "POST" or PATCH, if empty it is a GET
+     * @param array $post vaiables $_POST variables to send
      * @return array $ary response from github server
      */
     public function apiCall ($command, $request = null, $post = null) {

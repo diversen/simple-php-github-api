@@ -1,43 +1,111 @@
-### About
+# About
 
-Very simple github API for PHP using OAuth
+Very simple github API for PHP using OAuth. 37 LOC for the API class. And a
+curl helper class with 84 LOC. 
 
-### A github app
+# Brief explantion.
 
-Make an github app under your github account -> edit profile -> apps
+There is really only tree methods you can do. This is just brief. Below is
+an example (using built-in server) for easy testing: 
 
-For my example I used: 
+1) Generate an access URL to github.com
 
-URL:
-    
-    http://cos/test/github/example/github.php
+~~~.php
+$access_config = array (
+    'redirect_uri' => GITHUB_CALLBACK_URL,
+    'client_id' => GITHUB_ID,
+    'state' =>  md5(uniqid()),
+    'scope' => 'user' 
+);
 
-Callback URL:
+$api = new githubapi();
 
-    http://cos/test/github/example/callback.php
+$url = $api->getAccessUrl($access_config);
+echo "<a href=\"$url\">Github Login</a>";
+~~~
 
-### Example without composer
+2) Callback from github.com
 
-Clone the source or download it into a web directory
+~~~.php
+$access_config = array (
+    'redirect_uri' => GITHUB_CALLBACK_URL,
+    'client_id' => GITHUB_ID,
+    'client_secret' => GITHUB_SECRET
+);
 
-    git clone git://github.com/diversen/simple-php-github-api.git github
+$api = new githubapi();
+$res = $api->setAccessToken($access_config);
 
-copy config.php-dist to config.php
+if ($res) {
+    // OK
+    This is where we will call the api
+    header("Location: /api_call.php");
+} else {
+    // Not OK. echo errors
+    echo "Could not get access token. Errors: <br />";
+    print_r($api->errors);
+}
+~~~
 
-    cp config.php-dist config.php
+3) Api call
 
-Edit the 3. constants according to your setup. 
+~~~.php
+// We have a access token and we can now call the api: 
+$api = new githubapi();
 
-    define('GITHUB_ID', 'github_id');
-    define('GITHUB_SECRET', 'github_secret');
-    define('GITHUB_CALLBACK_URL', 'http://cos/test/github/callback.php');
+// Simple call - get current users credentials
+// This can also be done without scope
 
-Test it: 
+// example
+// $command = '/user', 
+// $request = 'GET', 'POST' or 'PATCH' or 'DELETE' etc. Se API: 
+// [https://developer.github.com/v3/](https://developer.github.com/v3/)
+// $post = variables to POST array
 
-go to http://cos/test/github/github.php (or your web path). 
+$command = "/user";
+$res = $api->apiCall($command, $request = null, $post = null);
+if (!$res) {
+    print_r($api->errors); 
+    die;
+}
+~~~
 
-This example will show the user his basic profile info.
-This could be used to make e.g. a login system. 
+# Example
+
+Example you can run right away using the built-in PHP-server. 
+
+## Make a github app
+
+Log into [github.com](github.com)
+
+Register a new application at [https://github.com/settings/developers](https://github.com/settings/developers)
+
+You will se something like this: 
+
+![My settings](./github-api.png" My settings")
+
+Create your app. 
+
+## Clone the `simple-php-github-api` source
+
+    git clone https://github.com/diversen/simple-php-github-api
+
+    cd simple-php-github-api
+
+## Configuration
+
+    cd vendor/diversen/simple-php-github-api
+
+    cp example/config.php-dist example/config.php
+
+Edit config
+
+Set config in `example/config.php` according to above settings and 
+the screenshot above.
+
+Run test-server with example:
+
+    php -S localhost:8080 -t example/
 
 ### More github API info
 
@@ -45,15 +113,7 @@ For full listing of all API calls check:
 
 http://developer.github.com/
 
-I have not tested all calls - but you should be able to use all. E.g. POST,
-or PATCH.
+I have not tested many calls - but you should be able to use all. E.g. POST,
+or PATCH, DELETE.
 
-### Composer specifics
-
-You can include the lib into a vendor library
-
-edit you `composer.json` file
-
-add the following to the require section: 
-
-    "diversen/simple-php-github-api": "1.0.*"
+Let me hear if it does not work out for you.

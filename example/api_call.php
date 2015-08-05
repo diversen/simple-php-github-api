@@ -1,20 +1,25 @@
 <?php
 
+// Step tree: Call the API
 
-include_once "config.php";
-use diversen\githubapi as githubApi;
+// Autoload
+include_once "../vendor/autoload.php";
 
-session_start();
+// Very small boot file. Starts session. Defines constants. 
+include_once "boot.php";
 
-// we have a access token and we can now call the api: 
-$api = new githubApi();
+// Use the githubapi
+use diversen\githubapi;
 
-// simple call - get current users credentials
+// We have a access token and we can now call the api: 
+$api = new githubapi();
+
+// Simple call - get current users credentials
+// This can also be done without scope
 $command = "/user";
-
 $res = $api->apiCall($command);
 if (!$res) {
-    print_r( $api->errors); die;
+    print_r($api->errors); die;
 }
 
 print_r($res);

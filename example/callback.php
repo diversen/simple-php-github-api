@@ -1,33 +1,42 @@
 <?php
 
-include_once "config.php";
+// Step two: check if user has autorized our app
 
-use diversen\githubapi as githubApi;
+// autoload
+include_once "../vendor/autoload.php";
 
-session_start();
+// very small boot file. Starts session. Defines constants. 
+include_once "boot.php";
+
+// use the githubapi
+use diversen\githubapi;
+
 
 /*
- * we are back from github and the user has accepted our
- * request. We now request a access token, 
- * The github api will just set this as a SESSION var found in
- * $_SESSION['access_token'] when returned from github
+ * We are back from github and the user has accepted our
+ * request. We can now request an access token, 
+ * The simple-php-github-api will just set this as a SESSION var found in
+ * $_SESSION['access_token'], when we return from github
  * 
- * If this is a success we redirect to app_call.php
- * where we then can make api calls from the $_SESSION['access_token']
+ * We check if everything is fine, and redirect to app_call.php
+ * Here we will we make api calls using the $_SESSION['access_token']
  * 
- * See: api_call.php
+ * Next step: 
+ * 
+ * /api_call.php
+ * 
  */
-$post = array (
+$access_config  = array (
     'redirect_uri' => GITHUB_CALLBACK_URL,
     'client_id' => GITHUB_ID,
     'client_secret' => GITHUB_SECRET,
 );
 
-$api = new githubApi();
-$res = $api->setAccessToken($post);
+$api = new githubapi();
+$res = $api->setAccessToken($access_config );
 
 if ($res) {
-    header("Location: api_call.php");
+    header("Location: /api_call.php");
 } else {
     echo "Could not get access token. Errors: <br />";
     print_r($api->errors);
