@@ -41,3 +41,4 @@ $api = new githubapi();
 
 $url = $api->getAccessUrl($access_config);
 echo "<a href=\"$url\">Github Login</a>";
+
