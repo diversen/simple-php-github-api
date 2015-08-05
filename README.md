@@ -96,15 +96,7 @@ You will see something like this:
 
 Create your app. 
 
-## Instal `simple-php-github-api`
-
-    php composer.phar require diversen/simple-php-github-api:~1.0
-    
-Or if you have placed composer.phar in `your path` as composer
-
-    composer require diversen/simple-php-github-api:~1.0
-
-Enter base_dir:
+Enter base_dir of the `simple-php-github-api`:
 
     cd vendor/diversen/simple-php-github-api
 
@@ -121,7 +113,7 @@ Run test-server with example:
 
     php -S localhost:8080 -t example/
 
-### More github API info
+## More github API info
 
 For full listing of all API calls check: 
 
@@ -134,4 +126,6 @@ Scope:
 I have not tested many calls - but you should be able to use all. E.g. POST,
 or PATCH, DELETE.
 
-Let me hear if it does not work out for you.
+## Support
+
+Create an issue, and Let me hear if it does not work out for you.
