@@ -5,7 +5,7 @@ curl helper class with 84 LOC.
 
 # Brief explantion.
 
-There is really only tree methods you can do. This is just brief. Below is
+There is really only tree methods you can do. Below is
 an example (using built-in server) for easy testing: 
 
 1) Generate an access URL to github.com
