@@ -3,8 +3,13 @@
 Very simple github API for PHP using OAuth. 37 LOC for the API class. And a
 curl helper class with 84 LOC.
 
-Source for githubapi.php: [https://github.com/diversen/simple-php-github-api/blob/master/src/githubapi.php](https://github.com/diversen/simple-php-github-api/blob/master/src/githubapi.php)
+# Instal `simple-php-github-api`
 
+    php composer.phar require diversen/simple-php-github-api:~1.0
+    
+Or if you have placed composer.phar in `your path` as composer
+
+    composer require diversen/simple-php-github-api:~1.0
 
 # Brief explantion.
 
