@@ -36,7 +36,7 @@ $api = new githubapi();
 $res = $api->setAccessToken($access_config );
 
 if ($res) {
-    header("Location: /api_call.php");
+    header("Location: /api.php");
 } else {
     echo "Could not get access token. Errors: <br />";
     print_r($api->errors);
