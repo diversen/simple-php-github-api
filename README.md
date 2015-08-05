@@ -46,19 +46,20 @@ if ($res) {
 }
 ~~~
 
-3) Api call
+3) API call
+
+For full listing see: [https://developer.github.com/v3/](https://developer.github.com/v3/)
 
 ~~~.php
 // We have a access token and we can now call the api: 
 $api = new githubapi();
 
-// Simple call - get current users credentials
+// Simple call - API get current users credentials
 // This can also be done without scope
 
 // example
 // $command = '/user', 
 // $request = 'GET', 'POST' or 'PATCH' or 'DELETE' etc. Se API: 
-// [https://developer.github.com/v3/](https://developer.github.com/v3/)
 // $post = variables to POST array
 
 $command = "/user";
@@ -66,10 +67,12 @@ $res = $api->apiCall($command, $request = null, $post = null);
 if (!$res) {
     print_r($api->errors); 
     die;
+} else {
+    print_r($res);
 }
 ~~~
 
-# Example
+# Full example
 
 Example you can run right away using the built-in PHP-server. 
 
@@ -81,7 +84,7 @@ Register a new application at [https://github.com/settings/developers](https://g
 
 You will see something like this: 
 
-![](https://raw.githubusercontent.com/diversen/simple-php-github-api/master/github-api.png "My settings")
+![My settings](https://raw.githubusercontent.com/diversen/simple-php-github-api/master/github-api.png "My settings")
 
 Create your app. 
 
