@@ -82,7 +82,7 @@ Register a new application at [https://github.com/settings/developers](https://g
 
 You will se something like this: 
 
-![My settings]("https://raw.githubusercontent.com/diversen/simple-php-github-api/master/github-api.png" My settings")
+![](github-api.png "My settings")
 
 Create your app. 
 
