@@ -92,9 +92,11 @@ Create your app.
 
     cd simple-php-github-api
 
+    composer update
+
 ## Configuration
 
-    cd vendor/diversen/simple-php-github-api
+    cd simple-php-github-api
 
     cp example/config.php-dist example/config.php
 
