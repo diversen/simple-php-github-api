@@ -5,11 +5,11 @@ curl helper class with 84 LOC.
 
 # Install `simple-php-github-api`
 
-    php composer.phar require diversen/simple-php-github-api:~1.0
+    php composer.phar require diversen/simple-php-github-api:
     
 Or if you have placed composer.phar in `your path` as composer
 
-    composer require diversen/simple-php-github-api:~1.0
+    composer require diversen/simple-php-github-api
 
 # Brief explantion.
 
